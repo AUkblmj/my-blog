@@ -8,7 +8,7 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 # 安装环境
 
-> Nvm、Nrm、Node、Hexo
+> Nvm、Nrm、Node、Hexo、Git
 
 
 
@@ -21,9 +21,13 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 [Mac 版](https://github.com/jerryc127/hexo-theme-butterfly)
 
+
+
 ### 1.1 下载安装包
 
 <img src="https://img.picui.cn/free/2024/08/19/66c34fa1e1244.png" style="zoom: 67%;" />
+
+
 
 ### 1.2 完全删除之前的node（如果之前安装过的话）
 
@@ -37,11 +41,15 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 4. 系统环境变量PATH中有关node和nvm的
 
+
+
 ### 1.3 运行 nvm-setup.exe 
 
 > 文件路径可以自定义
 
 <img src="基于hexo搭建个人blog基本环境.assets/66c3527ac2dd3.png" style="zoom:67%;" />
+
+
 
 ### 1.4 配置nvm环境变量
 
@@ -52,6 +60,8 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 > 更改环境变量
 
 <img src="基于hexo搭建个人blog基本环境.assets/66c3547fbdf8c.png" style="zoom:67%;" />
+
+
 
 ### 1.5 nvm换源
 
@@ -80,6 +90,8 @@ nvm -v
 
 ## 2 安装node（npm）
 
+### 2.1 安装node
+
 > npm（Node Package Manager），Node.js 的包管理器，安装 Node.js 之后自带 npm，无需单独安装
 
 > 方法一：通过node官网安装
@@ -102,13 +114,17 @@ nvm off                  		// 禁用 Node.js 版本管理(不卸载任何东西)
 nvm								// 显示nvm其他命令（英文版）
 ```
 
-### 2.1 检查node是否安装成功
+
+
+### 2.2 检查node是否安装成功
 
 ```bash
 node -v
 ```
 
-### 2.1 配置node环境变量
+
+
+### 2.3 配置node环境变量
 
 > 在上文提到的nodejs目录`G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs`中创建 `"node_global"` 和 `"node_cache"` 两个文件夹
 
@@ -152,6 +168,8 @@ npm config set cache G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs\node_cache
 npm install -g nrm   // 使用 npm 全局安装
 ```
 
+
+
 ### 3.2 nrm常用命令
 
 ```bash
@@ -191,10 +209,42 @@ hexo -v						// 验证是否安装成功
 
 
 
-## 6 安装Git并连接GitHub
+## 6 连接GitHub
+
+### 6.1 安装Git
 
 [Git官网下载地址]([Git - Downloads (git-scm.com)](https://git-scm.com/downloads))
 
 - Git CMD 是windows 命令行的指令风格
 - Git Bash 是linux系统的指令风格（建议使用）
 - Git GUI是图形化界面（新手学习不建议使用）
+
+
+
+### 6.2 Git环境配置
+
+```bash
+git config -l  										//查看所有配置
+git config --global user.name "你的用户名"		 	//配置用户名
+git config --global user.email "你的邮箱"		 	//配置密码
+```
+
+
+
+### 6.3 GitHub的ssh配置
+
+`ssh-keygen -t rsa -C "你的邮箱"`
+
+生成ssh公钥，在提示文件夹中找到`id_rsa.pub`文件，复制其内容到`GitHub --> Settings --> SSH and GPG keys --> New SSH key`中
+
+> 注意: 要是有【Key type】的选择项 ，选择默认Authentication Key 即可。
+
+
+
+### 6.4 测试连接
+
+```bash
+ssh -T git@github.com
+```
+
+出现`Hi xxx! You've successfully ...`内容即连接成功

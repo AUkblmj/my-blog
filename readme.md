@@ -2,5 +2,5 @@
 
 访问网址：
 
-[AUkbkmj](aukblmj.top)
+aukblmj.top
 

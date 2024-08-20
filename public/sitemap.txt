@@ -1,6 +1,0 @@
-http://example.com/2024/08/19/%E5%9F%BA%E4%BA%8Ehexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAblog%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83/
-http://example.com/link/index.html
-http://example.com/categories/index.html
-http://example.com/tags/index.html
-http://example.com/2024/08/19/hello-world/
-http://example.com/
