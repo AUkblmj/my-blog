@@ -2,9 +2,18 @@
 title: 基于hexo搭建个人blog基本环境
 date: 2024-08-19 21:37:49
 author: AUkblmj
-summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤，便于自己以后的二次操作。
+description: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤，便于自己以后的二次操作。
+cover: https://img.picui.cn/free/2024/08/20/66c4b14606fbf.jpg
 
 ---
+
+# 前言
+
+> 本文是一篇记录笔记，只记录主要步骤，细节问题可自行搜索
+>
+> 主要参考教程：[基于 Hexo 从零开始搭建个人博客系列 | 唐志远 (fe32.top)](https://fe32.top/articles/hexo1600/)
+
+
 
 # 安装环境
 
@@ -25,7 +34,7 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 ### 1.1 下载安装包
 
-<img src="https://img.picui.cn/free/2024/08/19/66c34fa1e1244.png" style="zoom: 67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c48d791ea4d.png %}
 
 
 
@@ -47,7 +56,7 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 > 文件路径可以自定义
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c3527ac2dd3.png" style="zoom:67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c48f5131972.png %}
 
 
 
@@ -55,11 +64,11 @@ summary: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤
 
 >  在 `自定义路径/nvm` 路径中创建nodejs文件夹（如果想要把node放在这里的话，默认应该是`C:\Program Files\nodejs`）
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c353971659e.png" style="zoom: 67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c48f8a90524.png %}
 
 > 更改环境变量
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c3547fbdf8c.png" style="zoom:67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c48fb2d9c9a.png %}
 
 
 
@@ -72,7 +81,7 @@ node_mirror: https://npmmirror.com/mirrors/node/
 npm_mirror: https://npmmirror.com/mirrors/npm/
 ```
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c353971659e.png" style="zoom: 67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c48fe3156b2.png %}
 
 
 
@@ -128,7 +137,7 @@ node -v
 
 > 在上文提到的nodejs目录`G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs`中创建 `"node_global"` 和 `"node_cache"` 两个文件夹
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c35b5f9b7e4.png" style="zoom:67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c4901c22c96.png %}
 
 >  进入 cmd 命令行，输入以下命令
 
@@ -149,7 +158,7 @@ npm config set cache G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs\node_cache
 找到先前创建的 `"node_global"` 和 `"node_cache"`两个文件夹
 分别`右击`文件夹 --> 选择`属性` --> 点击`安全`，全部打勾
 
-<img src="基于hexo搭建个人blog基本环境.assets/66c35ccc8c928.png" style="zoom:67%;" />
+{% image https://img.picui.cn/free/2024/08/20/66c4903562d80.png %}
 
 
 
@@ -248,3 +257,219 @@ ssh -T git@github.com
 ```
 
 出现`Hi xxx! You've successfully ...`内容即连接成功
+
+
+
+---
+
+
+
+# 初始化项目
+
+## 1 初始化Hexo项目
+
+```bash
+cd /g/AUBlog/AUkblmj
+hexo init my-blog				//初始化项目
+cd my-blog
+npm i							//安装相关依赖
+hexo s							//本地运行
+```
+
+> 项目结构如下：
+
+| 文件名                | 功能                                   |
+| --------------------- | :------------------------------------- |
+| node_modules          | 依赖包                                 |
+| scaffolds             | 生成文章的一些模板                     |
+| source                | 用来存放你的文章                       |
+| themes                | 主题                                   |
+| .npmignore            | 发布时忽略的文件（可忽略）             |
+| _config.landscape.yml | 主题的配置文件                         |
+| _config.yml           | 博客的配置文件                         |
+| package.json          | 项目名称、描述、版本、运行和开发等信息 |
+
+
+
+---
+
+
+
+## 2 将静态博客挂载到 GitHub Pages
+
+```bash
+npm install hexo-deployer-git --save		//安装hexo-deployer-git
+```
+
+
+
+> 修改`_config.yml`文件，建议使用vs code编辑
+
+```yml
+deploy:
+  type: git
+  repository: git@github.com:AUkblmj/AUkblmj.github.io.git
+  branch: main
+```
+
+
+
+> 部署到GitHub
+>
+> 注：之后修改文件，重新部署到GitHub均为此操作
+
+```bash
+hexo clean 
+hexo g
+hexo d
+```
+
+如果出现`Deploy done`，则说明部署成功。
+
+访问网址：`aukblmj.github.io`
+
+
+
+---
+
+
+
+## 3 设置个人域名
+
+购买个人域名后，在域名云解析中添加解析记录
+
+{% image https://img.picui.cn/free/2024/08/20/66c4905b034cf.png %}
+
+> 这时候你的项目根目录应该会出现一个名为CNAME的文件。如果没有的话，打开my-blog/source目录，新建CNAME文件，注意没有后缀。然后在里面写上域名(例如：aukblmj.top)，保存。最后运行hexo g、hexo d上传到github。这样到最后当你在地址栏输入xxx.github.io时，才会自动跳转到你的域名。
+
+打开github博客项目，点击`settings`，点击`Pages`，拉到下面`Custom domain`处，填上你自己的域名 ，Save保存。
+
+> 注意：这一步之后每次重新部署可能都要操作一遍
+
+
+
+----
+
+
+
+# 主题安装
+
+> 本站使用[hexo-theme-butterfly]([jerryc127/hexo-theme-butterfly: 🦋 A Hexo Theme: Butterfly (github.com)](https://github.com/jerryc127/hexo-theme-butterfly))主题
+
+> Git安装
+
+```bash
+git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+```
+
+使用Git安装后续魔改时更改的文件都是`G:\AUBlog\AUkblmj\my-blog\themes\butterfly`文件夹中的文件
+
+> 升级方法：在主题目录下，运行git pull
+
+
+
+> 安装渲染器
+
+```bash
+npm install hexo-renderer-pug hexo-renderer-stylus --save
+```
+
+
+
+> 升级建议
+
+把主题文件夹中的 `_config.yml` 复制到 Hexo 根目录里，同时重新命名为 `_config.butterfly.yml`。
+
+以后只需要在 `_config.butterfly.yml`进行配置就行。
+
+Hexo会自动合併主题中的`_config.yml`和 `_config.butterfly.yml`里的配置，如果存在同名配置，会使用`_config.butterfly.yml`的配置，其优先度较高。
+
+
+
+---
+
+
+
+# 基础页面配置
+
+## Front-matter
+
+> Front-matter 是 markdown 文件最上方以---分隔的区域，用于指定个别档案的变数。
+>
+
+```markdown
+---
+title:
+date:
+updated:
+type:
+comments:
+description:
+keywords:
+top_img:
+mathjax:
+katex:
+aside:
+aplayer:
+---
+```
+
+| 写法             | 解释                                                         |
+| :--------------- | ------------------------------------------------------------ |
+| title            | 【必需】页面标题                                             |
+| date             | 【必需】页面创建日期                                         |
+| type             | 【必需】标签、分类和友情链接三个页面需要配置                 |
+| updated          | 【可选】页面更新日期                                         |
+| description      | 【可选】页面描述                                             |
+| keywords         | 【可选】页面关键字                                           |
+| comments         | 【可选】显示页面评论模块(默认 true)                          |
+| top_img          | 【可选】页面顶部图片                                         |
+| mathjax          | 【可选】显示mathjax(当设置mathjax的per_page: false时，才需要配置，默认 false) |
+| katex            | 【可选】显示katex(当设置katex的per_page: false时，才需要配置，默认 false) |
+| aside            | 【可选】显示侧边栏 (默认 true)                               |
+| aplayer          | 【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置 |
+| highlight_shrink | 【可选】配置代码框是否展开(true/false)(默认为设置中highlight_shrink的配置) |
+
+
+
+---
+
+
+
+## 标签页
+
+1.前往Hexo博客根目录，打开cmd命令窗口执行`hexo new page tags`。
+
+2.在【my-blog/source/】会生成一个含有index.md文件的tags文件夹。
+
+3.修改【my-blog/source/tags/index.md】，添加`type: "tags"`
+
+
+
+---
+
+
+
+## 分类页
+
+1.前往Hexo博客根目录，打开cmd命令窗口执行`hexo new page categories`。
+
+2.在【my-blog/source/】会生成一个含有index.md文件的categories文件夹。
+
+3.修改【my-blog/source/tags/index.md】，添加`type: "categories"`
+
+
+
+---
+
+
+
+## 文章
+
+```bash
+hexo n 文章名称
+```
+
+即会在`G:\AUBlog\AUkblmj\my-blog\source\_posts`中生成文章名称.md文件，可在其中书写文章内容
+
+
