@@ -1,5 +1,5 @@
 ---
-title: 基于hexo搭建个人blog基本环境
+title: 基于hexo搭建个人blog
 date: 2024-08-19 21:37:49
 author: AUkblmj
 description: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤，便于自己以后的二次操作。

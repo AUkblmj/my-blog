@@ -4,12 +4,12 @@
 
 # Site
 title: AUkblmj
-subtitle: "的个人博客"
 description: "记录学习内容"
 keywords:
 author: AUkblmj
-language: zh
+language: zh-CN
 timezone: "Asia/Shanghai"
+favicon: /img/favicon-32x32-next.png
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -121,4 +121,198 @@ tag_plugins:
     carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
-index_img: https://img.picui.cn/free/2024/08/20/66c4b09e4ee58.jpg
+# 主页
+index_img: https://img.picui.cn/free/2024/08/20/66c4b09e4ee58.jpg # 主页顶部图
+default_top_img: https://img.picui.cn/free/2024/08/20/66c4b09e4ee58.jpg
+index_post_content: # 主页文章内容
+  method: 1 # 1：description  2：both   3：auto_excerpt   4：false
+  length: 500 # if you set method to 2 or 3, the length need to config
+
+# 导航菜单
+menu:
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Tags: /tags/ || fas fa-tags
+  Categories: /categories/ || fas fa-folder-open
+  List||fas fa-list||hide:
+    Music: /music/ || fas fa-music
+    Movie: /movies/ || fas fa-video
+    Photo: /photos/ ||
+  Link: /link/ || fas fa-link
+  About: /about/ || fas fa-heart
+
+# 导航栏设置
+nav:
+  logo: https://img.picui.cn/free/2024/08/21/66c5ad6a1b132.png #image
+  display_title: true
+  fixed: false # fixed navigation bar
+
+# 代码块
+highlight_theme: mac
+highlight_copy: true
+highlight_shrink: false # 代码框展开
+code_word_wrap: false # 代码换行
+highlight_height_limit: 200 # unit: px
+
+social:
+  fab fa-github: https://github.com/AUkblmj || Github
+  fas fa-envelope: 3440131758@qq.com || Email
+
+cover:
+  # 是否显示文章封面
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  # 封面显示的位置
+  # 三个值可配置 left , right , both
+  position: both
+  # 当没有设置cover时，默认的封面显示
+  default_cover:
+
+post_meta:
+  page:
+    date_type: both # created or updated or both 主页文章日期是创建日或者更新日或都显示
+    date_format: date # date/relative 显示日期还是相对日期
+    categories: false # true or false 主页是否显示分类
+    tags: false # true or false 主页是否显示标签
+    label: true # true or false 显示描述性文字
+  post:
+    date_type: both # created or updated or both 文章页日期是创建日或者更新日或都显示
+    date_format: date # date/relative 显示日期还是相对日期
+    categories: false # true or false 文章页是否显示分类
+    tags: false # true or false 文章页是否显示标签
+    label: true # true or false 显示描述性文字
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href: https://aukblmj.top
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+avatar:
+  img: https://img.picui.cn/free/2024/08/21/66c5b4b3bcc50.jpg
+  effect: false # 头像会一直转圈
+
+# copy settings
+# copyright: Add the copyright information after copied content (复制的内容后面加上版权信息)
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 50
+
+footer:
+  owner:
+    enable: true
+    since: 2023 # 站点起始时间
+
+translate:
+  enable: true
+  # 默认按钮显示文字(网站是简体，应设置为'default: 繁')
+  default: 繁
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  # 网站默认语言，1: 繁体中文, 2: 简体中文
+  defaultEncoding: 2
+  # Time delay 延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+  translateDelay: 0
+  # 当文字是简体时，按钮显示的文字
+  msgToTraditionalChinese: "繁"
+  # 当文字是繁体时，按钮显示的文字
+  msgToSimplifiedChinese: "簡"
+
+# 滚动百分比
+# show scroll percent in scroll-to-top button
+rightside_scroll_percent: true
+
+runtimeshow:
+  enable: true
+  publish_date: 2023/07/17 00:00:00
+  ##网页开通时间
+  #格式: 月/日/年 时间
+  #也可以写成 年/月/日 时间
+
+# Typewriter Effect (打字效果)
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: true
+  colorful: true # open particle animation (冒光特效)
+  shake: false #  open shake (抖動特效)
+  mobile: true
+
+# footer是否显示图片背景(与top_img一致)
+footer_bg: true
+
+# 点击出现文字，文字可自行修改
+ClickShowText:
+  enable: true
+  text:
+    - 富强
+    - 民主
+    - 文明
+    - 和谐
+    - 自由
+    - 平等
+    - 公正
+    - 法治
+    - 爱国
+    - 敬业
+    - 诚信
+    - 友善
+  fontSize: 15px
+  random: true # 文字随机显示
+  mobile: true
+
+  # Site
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # loop (循環打字)
+  loop: true
+  # source調用第三方服務
+  # source: false 關閉調用
+  # source: 1  調用搏天api的隨機語錄（簡體）
+  # source: 2  調用一言網的一句話（簡體）
+  # source: 3  調用一句網（簡體）
+  # source: 4  調用今日詩詞（簡體）
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: false
+  # 如果有英文逗號' , ',請使用轉義字元 &#44;
+  # 如果有英文雙引號' " ',請使用轉義字元 &quot;
+  # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
+  # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
+  sub:
+    - 窗外有月色和雨&#44;fa
+    - There is moonlight and rain outside the window, and I miss you.
+
+# 加载动画 Loading Animation
+preloader:
+  enable: true
+  # source
+  # 1. fullpage-loading
+  # 2. pace (progress bar)
+  source: 1
+  # pace theme (see https://codebyzach.github.io/pace/)
+  pace_css_url:
+
+# Pjax [Beta]
+# It may contain bugs and unstable, give feedback when you find the bugs.
+# https://github.com/MoOx/pjax
+pjax:
+  enable: true
+  # 对于一些第三方插件，有些并不支持 pjax 。
+  # 你可以把网页加入到 exclude 里，这个网页会被 pjax 排除在外。
+  # 点击该网页会重新加载网站。
+  exclude:
+    - /music/
+    - /no-pjax/
+
+local_search:
+  - enable: false
++  enable: true
+
+inject:
+  bottom:
+    # 樱花飘落效果
+    # - <script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script>
