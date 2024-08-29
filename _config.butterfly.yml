@@ -283,8 +283,8 @@ subtitle:
   # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
-    - 窗外有月色和雨&#44;fa
-    - There is moonlight and rain outside the window, and I miss you.
+    - 人生苦短，精力有限
+    - Life is short and energy is limited
 
 # 加载动画 Loading Animation
 preloader:
