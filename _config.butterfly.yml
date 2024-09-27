@@ -10,10 +10,11 @@ author: AUkblmj
 language: zh-CN
 timezone: "Asia/Shanghai"
 favicon: /img/favicon-32x32-next.png
+email: 3440131758@qq.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://github.com/AUkblmj/AUkblmj.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -122,8 +123,8 @@ tag_plugins:
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
 
 # 主页
-index_img: https://img.picui.cn/free/2024/08/20/66c4b09e4ee58.jpg # 主页顶部图
-default_top_img: https://img.picui.cn/free/2024/08/20/66c4b09e4ee58.jpg
+index_img: https://s2.loli.net/2024/09/27/A6qHfP4geCBhyxT.jpg # 主页顶部图
+default_top_img: https://s2.loli.net/2024/09/27/TXgJFbxay3tEQm6.jpg
 index_post_content: # 主页文章内容
   method: 1 # 1：description  2：both   3：auto_excerpt   4：false
   length: 500 # if you set method to 2 or 3, the length need to config
@@ -191,7 +192,7 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 avatar:
-  img: https://img.picui.cn/free/2024/08/21/66c5b4b3bcc50.jpg
+  img: https://s2.loli.net/2024/09/27/GLpK8w2n1ePvhbx.jpg
   effect: false # 头像会一直转圈
 
 # copy settings
@@ -285,6 +286,8 @@ subtitle:
   sub:
     - 人生苦短，精力有限
     - Life is short and energy is limited
+    - 万事开头难，只要肯登攀
+    - It's always difficult at the beginning, but if you're willing to climb, you'll make it
 
 # 加载动画 Loading Animation
 preloader:

@@ -3,7 +3,7 @@ title: 基于hexo搭建个人blog
 date: 2024-08-19 21:37:49
 author: AUkblmj
 description: 文章主要记录了我基于hexo搭建个人blog基本环境的步骤，便于自己以后的二次操作。
-cover: https://img.picui.cn/free/2024/08/20/66c4b14606fbf.jpg
+cover: https://s2.loli.net/2024/09/27/RVqdXEJaw57Iiy6.jpg
 
 ---
 
@@ -34,7 +34,9 @@ cover: https://img.picui.cn/free/2024/08/20/66c4b14606fbf.jpg
 
 ### 1.1 下载安装包
 
-{% image https://img.picui.cn/free/2024/08/20/66c48d791ea4d.png %}
+![Snipaste_2024-09-27_16-55-07.png](https://s2.loli.net/2024/09/27/pZdOb9PBiRujCq2.png)
+
+![Snipaste_2024-09-27_16-56-39.png](https://s2.loli.net/2024/09/27/NZEActl2ogSp5k1.png)
 
 
 
@@ -56,19 +58,17 @@ cover: https://img.picui.cn/free/2024/08/20/66c4b14606fbf.jpg
 
 > 文件路径可以自定义
 
-{% image https://img.picui.cn/free/2024/08/20/66c48f5131972.png %}
-
 
 
 ### 1.4 配置nvm环境变量
 
->  在 `自定义路径/nvm` 路径中创建nodejs文件夹（如果想要把node放在这里的话，默认应该是`C:\Program Files\nodejs`）
+>  在 `自定义路径/nvm` 路径中创建nodejs文件夹（如果想要把node放在这里的话，默认应该是`C:\Program Files\nodejs`）（随着使用缓存会越来越大，不建议放在C盘）
 
-{% image https://img.picui.cn/free/2024/08/20/66c48f8a90524.png %}
+![Snipaste_2024-09-27_16-57-43.png](https://s2.loli.net/2024/09/27/QqC9xlAedOEUwTS.png)
 
 > 更改环境变量
 
-{% image https://img.picui.cn/free/2024/08/20/66c48fb2d9c9a.png %}
+![image.png](https://s2.loli.net/2024/09/27/fu3NhkFsUZxdRlY.png)
 
 
 
@@ -81,7 +81,7 @@ node_mirror: https://npmmirror.com/mirrors/node/
 npm_mirror: https://npmmirror.com/mirrors/npm/
 ```
 
-{% image https://img.picui.cn/free/2024/08/20/66c48fe3156b2.png %}
+![Snipaste_2024-09-27_16-58-59.png](https://s2.loli.net/2024/09/27/fWN4J3TuBlsc9GV.png)
 
 
 
@@ -137,7 +137,7 @@ node -v
 
 > 在上文提到的nodejs目录`G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs`中创建 `"node_global"` 和 `"node_cache"` 两个文件夹
 
-{% image https://img.picui.cn/free/2024/08/20/66c4901c22c96.png %}
+![Snipaste_2024-09-27_17-02-45.png](https://s2.loli.net/2024/09/27/MU2PsH6Id8SVOLa.png)
 
 >  进入 cmd 命令行，输入以下命令
 
@@ -158,8 +158,6 @@ npm config set cache G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs\node_cache
 找到先前创建的 `"node_global"` 和 `"node_cache"`两个文件夹
 分别`右击`文件夹 --> 选择`属性` --> 点击`安全`，全部打勾
 
-{% image https://img.picui.cn/free/2024/08/20/66c4903562d80.png %}
-
 
 
 ---
@@ -174,12 +172,15 @@ npm config set cache G:\AUSoftWare\nvm\nvm1.1.12\nvm\nodejs\node_cache
 ### 3.1 安装nrm
 
 ```bash
+npm config set registry https://registry.npmmirror.com	//npm换源
 npm install -g nrm   // 使用 npm 全局安装
 ```
 
 
 
 ### 3.2 nrm常用命令
+
+> 刚安装好指令无法找到，重启cmd即可
 
 ```bash
 nrm ls				// 显示全部镜像源

@@ -2,6 +2,7 @@
 title: git上传超过100MB大文件
 date: 2024-08-21 22:54:38
 author: AUkblmj
+cover: https://s2.loli.net/2024/09/27/DjJhI2AZB81qWaP.jpg
 ---
 
 > 下载 [git-lfs]([Releases · git-lfs/git-lfs (github.com)](https://github.com/git-lfs/git-lfs/releases?utm_source=gitlfs_site&utm_medium=releases_link&utm_campaign=gitlfs))
